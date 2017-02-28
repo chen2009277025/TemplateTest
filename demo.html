@@ -22,7 +22,7 @@
         // 数据量
         var length = 100;
         // 渲染次数
-        var number = 10000;
+        var number = 1;
 
         var data = {
             list: []
@@ -369,10 +369,9 @@
     <!-- doT 的模板 -->
     <script id="doT" type="text/tmpl">
 <ul>
-    {{ for (var val, i = 0, l = it.list.length; i < l; i ++) { }}
-        {{ val = it.list; }}
-        <li>用户: {{=val[i].user}}/ 网站：{{=val[i].site}}</li>
-    {{ } }}
+    {{~ it.list:item:i }}
+        <li>用户: {{=item.user}}/ 网站：{{=item.site}}</li>
+    {{~}}
 </ul>
 
 
